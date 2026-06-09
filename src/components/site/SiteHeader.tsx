@@ -5,7 +5,8 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Button, LanguageSwitch, IconButton } from "@/components/ds";
 import { Icons } from "@/components/icons";
-import { SITE, SLUGS, hrefFor, type Lang } from "@/content/content";
+import { SLUGS, hrefFor, type Lang } from "@/content/content";
+import { CONTENT } from "@/content/loader";
 
 function routeIdFromPath(pathname: string, lang: Lang): string {
   const parts = pathname.replace(/\/+$/, "").split("/").filter(Boolean);
@@ -16,7 +17,7 @@ function routeIdFromPath(pathname: string, lang: Lang): string {
 }
 
 export function SiteHeader({ lang }: { lang: Lang }) {
-  const t = SITE[lang];
+  const t = CONTENT[lang];
   const pathname = usePathname() || "/";
   const router = useRouter();
   const routeId = routeIdFromPath(pathname, lang);

@@ -12,7 +12,7 @@ export function AboutPage({ t, lang }: { t: Dict; lang: Lang }) {
       <Section>
         <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "0.8fr 1.2fr", gap: "var(--space-8)", alignItems: "start" }}>
           <div className="about-portrait" style={{ position: "sticky", top: 90 }}>
-            <Portrait ratio="3 / 4" />
+            <Portrait ratio="3 / 4" src={t.media?.portraitUrl || undefined} />
             <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-2)", marginTop: "var(--space-4)" }}>
               {a.values.map((v) => (
                 <span

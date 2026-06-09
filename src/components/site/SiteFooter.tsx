@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import { Icons } from "@/components/icons";
-import { SITE, hrefFor, type Lang } from "@/content/content";
+import { hrefFor, type Lang } from "@/content/content";
+import { CONTENT } from "@/content/loader";
 
 export function SiteFooter({ lang }: { lang: Lang }) {
-  const t = SITE[lang];
+  const t = CONTENT[lang];
   const legalIds = ["impressum", "datenschutz"];
   return (
     <footer style={{ background: "var(--surface-inverse)", color: "var(--sand-200)", marginTop: "var(--space-12)" }}>

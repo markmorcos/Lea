@@ -12,3 +12,4 @@ next-env.d.ts
 # Internal planning docs — kept local, not pushed (contain sensitive notes)
 /WEBSITE_SPEC.md
 /DESIGN_HANDOFF.md
+*.tsbuildinfo
