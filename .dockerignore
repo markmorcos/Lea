@@ -1,0 +1,26 @@
+# Dependencies
+node_modules
+npm-debug.log*
+
+# Build output
+.next
+out
+
+# Editor / system
+.vscode
+.idea
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Version control
+.git
+.gitignore
+
+# Environment
+.env
+.env.*
+
+# Local-only planning docs
+WEBSITE_SPEC.md
+DESIGN_HANDOFF.md

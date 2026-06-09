@@ -1,0 +1,15 @@
+version: 0.6.2
+
+namespace: lea
+project: lea
+
+services:
+  - name: lea
+    image: ghcr.io/markmorcos/lea
+    port: 80
+
+    ingress:
+      host: pfaffeneder-psychologische-beratung.de
+      www: true
+      path: /
+      pathType: Prefix
