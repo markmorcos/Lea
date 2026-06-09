@@ -1,0 +1,61 @@
+/* ===========================================================================
+   Global entry point — Lea Pfaffeneder website.
+   Mirrors the design system's styles.css: fonts + tokens, base last.
+   Plus the responsive layout rules ported from the prototype shell.
+   =========================================================================== */
+
+@import "../styles/fonts/fonts.css";
+@import "../styles/tokens/colors.css";
+@import "../styles/tokens/typography.css";
+@import "../styles/tokens/spacing.css";
+@import "../styles/tokens/radius.css";
+@import "../styles/tokens/shadows.css";
+@import "../styles/tokens/motion.css";
+@import "../styles/tokens/base.css";
+
+html,
+body {
+  margin: 0;
+}
+body {
+  background: var(--surface-page);
+}
+a {
+  text-decoration: none;
+}
+
+/* Responsive collapse — ported from the prototype's index.html <style>. */
+@media (max-width: 1100px) {
+  .hero-grid,
+  .about-grid,
+  .contact-grid,
+  .fees-grid,
+  .booking-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-portrait {
+    order: -1;
+    max-width: 380px;
+  }
+  .about-portrait {
+    max-width: 340px;
+    position: static !important;
+  }
+  .cards-row,
+  .topics-grid,
+  .form-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .site-nav,
+  .cta-desktop {
+    display: none !important;
+  }
+  .menu-btn {
+    display: inline-flex !important;
+  }
+}
+@media (min-width: 1101px) {
+  .mobile-nav {
+    display: none !important;
+  }
+}

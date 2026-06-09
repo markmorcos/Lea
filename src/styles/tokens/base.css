@@ -1,0 +1,76 @@
+/* ===========================================================================
+   BASE — element defaults built on the tokens. Calm, readable, accessible.
+   Imported last so it can consume every token.
+   =========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  font-weight: var(--fw-regular);
+  color: var(--text-body);
+  background-color: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-heading);
+  font-weight: var(--fw-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  margin: 0 0 var(--space-4);
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--text-4xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-tight); color: var(--text-strong); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+
+p { margin: 0 0 var(--space-4); max-width: var(--measure-prose); text-wrap: pretty; }
+
+a {
+  color: var(--text-link);
+  text-decoration-color: color-mix(in srgb, var(--text-link) 35%, transparent);
+  text-underline-offset: 0.18em;
+  transition: var(--transition-color);
+}
+a:hover { color: var(--text-link-hover); text-decoration-color: currentColor; }
+
+/* Eyebrow / overline helper */
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+/* Lead paragraph */
+.lead {
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+  color: var(--text-body);
+}
+
+/* Accessible focus */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-xs);
+}
+
+::selection { background: var(--sage-200); color: var(--slate-900); }
+
+hr { border: none; border-top: 1px solid var(--border-subtle); margin: var(--space-7) 0; }
+
+img { max-width: 100%; display: block; }

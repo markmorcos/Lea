@@ -1,0 +1,14 @@
+/node_modules
+/.next/
+/out/
+/build
+*.pem
+.DS_Store
+npm-debug.log*
+.env*
+!.env.example
+next-env.d.ts
+
+# Internal planning docs — kept local, not pushed (contain sensitive notes)
+/WEBSITE_SPEC.md
+/DESIGN_HANDOFF.md

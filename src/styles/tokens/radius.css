@@ -1,0 +1,22 @@
+/* ===========================================================================
+   RADIUS — Lea Pfaffeneder Design System
+   Soft, rounded — calm and human. Pills for primary CTAs and chips.
+   =========================================================================== */
+
+:root {
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   12px;   /* inputs, small cards */
+  --radius-lg:   18px;   /* cards */
+  --radius-xl:   26px;   /* large surfaces / media */
+  --radius-2xl:  36px;
+  --radius-pill: 999px;  /* CTAs, chips, avatars */
+  --radius-round:50%;
+
+  /* Semantic */
+  --radius-button: var(--radius-pill);
+  --radius-input:  var(--radius-md);
+  --radius-card:   var(--radius-lg);
+  --radius-chip:   var(--radius-pill);
+  --radius-media:  var(--radius-xl);
+}

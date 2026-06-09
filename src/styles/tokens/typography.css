@@ -1,0 +1,57 @@
+/* ===========================================================================
+   TYPOGRAPHY — Lea Pfaffeneder Design System
+   Soft editorial serif for headings (Spectral) + warm humanist sans for body
+   (Source Sans 3). Generous line-height, calm rhythm.
+   Type families are declared in /fonts/fonts.css (@font-face closure).
+   =========================================================================== */
+
+:root {
+  /* --- Families --------------------------------------------------------- */
+  --font-serif: "Spectral", Georgia, "Times New Roman", serif;
+  --font-sans:  "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:  "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Semantic family aliases */
+  --font-display: var(--font-serif);  /* hero & section headings */
+  --font-heading: var(--font-serif);
+  --font-body:    var(--font-sans);
+  --font-ui:      var(--font-sans);   /* buttons, labels, nav */
+
+  /* --- Weights ---------------------------------------------------------- */
+  --fw-light:    300; /* @kind font */
+  --fw-regular:  400; /* @kind font */
+  --fw-medium:   500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold:     700; /* @kind font */
+
+  /* --- Type scale (rem, 1rem = 16px). Calm modular ~1.2–1.25 -------------*/
+  --text-2xs: 0.75rem;   /* 12px — legal / captions */
+  --text-xs:  0.8125rem; /* 13px */
+  --text-sm:  0.9375rem; /* 15px — UI labels */
+  --text-base:1.0625rem; /* 17px — body default (large, readable) */
+  --text-md:  1.1875rem; /* 19px — lead paragraph */
+  --text-lg:  1.375rem;  /* 22px */
+  --text-xl:  1.75rem;   /* 28px — card / sub headings */
+  --text-2xl: 2.1875rem; /* 35px — section headings */
+  --text-3xl: 2.75rem;   /* 44px */
+  --text-4xl: 3.5rem;    /* 56px — hero */
+  --text-5xl: 4.25rem;   /* 68px — display */
+
+  /* --- Line heights ----------------------------------------------------- */
+  --leading-tight:   1.12;  /* display */
+  --leading-snug:    1.25;  /* headings */
+  --leading-normal:  1.45;  /* sub-headings, leads */
+  --leading-relaxed: 1.65;  /* body copy — generous */
+  --leading-loose:   1.8;
+
+  /* --- Letter spacing --------------------------------------------------- */
+  --tracking-tight:  -0.02em;  /* large serif display */
+  --tracking-snug:   -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-caps:   0.12em;   /* eyebrow / overline */
+
+  /* --- Paragraph measure ------------------------------------------------ */
+  --measure-prose: 64ch;   /* comfortable reading width */
+  --measure-narrow: 46ch;
+}

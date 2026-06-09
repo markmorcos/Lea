@@ -1,0 +1,43 @@
+/* ===========================================================================
+   MOTION — Lea Pfaffeneder Design System
+   Subtle, calm, never bouncy. Gentle fades & small rises. Always respect
+   prefers-reduced-motion in implementation.
+   =========================================================================== */
+
+:root {
+  /* Durations */
+  --dur-instant: 80ms;  /* @kind other */
+  --dur-fast:    160ms; /* @kind other */
+  --dur-base:    240ms; /* @kind other */
+  --dur-slow:    400ms; /* @kind other */
+  --dur-slower:  640ms; /* @kind other */
+
+  /* Easings — soft, no overshoot */
+  --ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1);  /* @kind other */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);   /* @kind other */
+  --ease-in:       cubic-bezier(0.4, 0.0, 1, 1);    /* @kind other */
+  --ease-calm:     cubic-bezier(0.25, 0.1, 0.25, 1);/* @kind other */
+
+  /* Semantic transitions */
+  --transition-color:   color var(--dur-fast) var(--ease-standard),
+                        background-color var(--dur-fast) var(--ease-standard),
+                        border-color var(--dur-fast) var(--ease-standard);
+  --transition-transform: transform var(--dur-base) var(--ease-out);
+  --transition-all:     all var(--dur-base) var(--ease-standard);
+
+  /* Small motion distances */
+  --rise-sm: 6px;
+  --rise-md: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-instant: 0ms; /* @kind other */
+    --dur-fast:    0ms; /* @kind other */
+    --dur-base:    0ms; /* @kind other */
+    --dur-slow:    0ms; /* @kind other */
+    --dur-slower:  0ms; /* @kind other */
+    --rise-sm: 0px;
+    --rise-md: 0px;
+  }
+}

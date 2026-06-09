@@ -1,0 +1,98 @@
+/* ===========================================================================
+   COLORS — Lea Pfaffeneder Design System
+   Desaturated, nature-adjacent palette: sage/eucalyptus primary, warm sand
+   backgrounds, terracotta/clay accent, deep green-slate text.
+   All semantic text/surface pairings target WCAG 2.1 AA.
+   =========================================================================== */
+
+:root {
+  /* --- Sand: warm off-white backgrounds & warm neutrals ------------------ */
+  --sand-50:  #FBF8F2;   /* page background */
+  --sand-100: #F5EFE4;   /* raised / alt surface */
+  --sand-200: #ECE3D4;   /* hairline dividers, quiet fills */
+  --sand-300: #DED1BC;   /* stronger borders */
+  --sand-400: #C9B89C;
+
+  /* --- Slate: deep, slightly green-tinted text (never pure black) -------- */
+  --slate-900: #232E2A;  /* display headings */
+  --slate-800: #2D3A35;  /* headings */
+  --slate-700: #3C4B45;  /* body text */
+  --slate-600: #4E5D57;
+  --slate-500: #5C6A64;  /* muted text (AA on sand-50) */
+  --slate-400: #7E8A84;  /* disabled / hint */
+  --slate-300: #A6AEA9;
+
+  /* --- Sage / eucalyptus: primary brand green --------------------------- */
+  --sage-50:  #EDF3EF;
+  --sage-100: #DCE8E0;
+  --sage-200: #BFD3C7;
+  --sage-300: #9DBBA8;
+  --sage-400: #7BA08B;
+  --sage-500: #5E8472;   /* brand mark */
+  --sage-600: #4B6E5D;
+  --sage-700: #3C5A4C;   /* primary button bg (AA white text) */
+  --sage-800: #2F473B;
+  --sage-900: #243831;
+
+  /* --- Clay / terracotta: warm accent ----------------------------------- */
+  --clay-50:  #F9EEE6;
+  --clay-100: #F1DBCC;
+  --clay-200: #E5C0A6;
+  --clay-300: #D7A582;
+  --clay-400: #C9885F;
+  --clay-500: #BB6E47;   /* accent */
+  --clay-600: #A25836;   /* accent strong (AA white text) */
+  --clay-700: #834627;
+
+  /* --- Functional hues (muted to match the palette) --------------------- */
+  --teal-500:  #4F8A88;  /* info / quiet links */
+  --teal-600:  #3E7170;
+  --amber-500: #C08A2E;  /* warning */
+  --amber-600: #9E6F1E;
+  --rose-500:  #B25149;  /* error / destructive */
+  --rose-600:  #97413A;
+
+  /* =========================================================================
+     SEMANTIC ALIASES — reference these in components, not the raw scales.
+     ========================================================================= */
+
+  /* Surfaces */
+  --surface-page:    var(--sand-50);
+  --surface-raised:  #FFFFFF;
+  --surface-sunken:  var(--sand-100);
+  --surface-card:    #FFFFFF;
+  --surface-inverse: var(--sage-900);
+  --surface-accent-soft: var(--clay-50);
+  --surface-brand-soft:  var(--sage-50);
+
+  /* Text */
+  --text-strong:   var(--slate-900);
+  --text-heading:  var(--slate-800);
+  --text-body:     var(--slate-700);
+  --text-muted:    var(--slate-500);
+  --text-faint:    var(--slate-400);
+  --text-on-brand: #FBF8F2;
+  --text-on-accent:#FFF7F1;
+  --text-inverse:  var(--sand-50);
+  --text-link:     var(--sage-700);
+  --text-link-hover: var(--sage-800);
+
+  /* Borders & lines */
+  --border-subtle: var(--sand-200);
+  --border-default:var(--sand-300);
+  --border-strong: var(--sand-400);
+  --border-focus:  var(--sage-600);
+  --ring-focus:    color-mix(in srgb, var(--sage-600) 38%, transparent);
+
+  /* Brand / interactive */
+  --brand:            var(--sage-500);
+  --brand-strong:     var(--sage-700);
+  --accent:           var(--clay-500);
+  --accent-strong:    var(--clay-600);
+
+  /* Functional */
+  --info:    var(--teal-600);
+  --success: var(--sage-700);
+  --warning: var(--amber-600);
+  --danger:  var(--rose-600);
+}
