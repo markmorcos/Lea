@@ -47,9 +47,15 @@ export function SiteHeader({ lang }: { lang: Lang }) {
         transition: "background var(--dur-base) var(--ease-standard), border-color var(--dur-base) var(--ease-standard)",
       }}
     >
-      <div style={{ maxWidth: "var(--container)", margin: "0 auto", padding: "13px var(--page-pad)", display: "flex", alignItems: "center", gap: "var(--space-5)" }}>
-        <Link href={hrefFor(lang, "home")} onClick={() => setMenuOpen(false)} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flex: "0 0 auto" }}>
+      <div className="header-bar" style={{ maxWidth: "var(--container)", margin: "0 auto", padding: "13px var(--page-pad)", display: "flex", alignItems: "center", gap: "var(--space-5)" }}>
+        <Link
+          className="brand"
+          href={hrefFor(lang, "home")}
+          onClick={() => setMenuOpen(false)}
+          style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flex: "0 1 auto", minWidth: 0 }}
+        >
           <span
+            className="brand-logo"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -63,13 +69,40 @@ export function SiteHeader({ lang }: { lang: Lang }) {
               fontSize: 21,
               color: "var(--sage-700)",
               fontWeight: 500,
+              flexShrink: 0,
             }}
           >
             lp
           </span>
-          <span style={{ display: "flex", flexDirection: "column", lineHeight: 1.15 }}>
-            <span style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-lg)", color: "var(--text-strong)", fontWeight: 500 }}>Lea Zoe Pfaffeneder</span>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--accent-strong)", fontWeight: 600 }}>
+          <span style={{ display: "flex", flexDirection: "column", lineHeight: 1.15, minWidth: 0 }}>
+            <span
+              className="brand-name"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "var(--text-lg)",
+                color: "var(--text-strong)",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              Lea Zoe Pfaffeneder
+            </span>
+            <span
+              className="brand-sub"
+              style={{
+                fontFamily: "var(--font-ui)",
+                fontSize: 11,
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+                color: "var(--accent-strong)",
+                fontWeight: 600,
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
               {lang === "de" ? "Psychologische Beratung" : "Psychological Counselling"}
             </span>
           </span>
@@ -96,8 +129,10 @@ export function SiteHeader({ lang }: { lang: Lang }) {
           ))}
         </nav>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "var(--space-3)", marginLeft: "var(--space-3)" }}>
-          <LanguageSwitch value={lang} onChange={switchLang} />
+        <div className="header-controls" style={{ display: "flex", alignItems: "center", gap: "var(--space-3)", marginLeft: "var(--space-3)", flexShrink: 0 }}>
+          <span className="lang-switch" style={{ display: "inline-flex" }}>
+            <LanguageSwitch value={lang} onChange={switchLang} />
+          </span>
           <span className="cta-desktop">
             <Button variant="primary" size="sm" href={hrefFor(lang, "termine")} iconRight={Icons.arrowRight({ size: 17 })}>
               {t.cta}
