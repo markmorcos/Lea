@@ -16,6 +16,9 @@
 html,
 body {
   margin: 0;
+  /* `clip` (not `hidden`) so stray horizontal overflow can't shift the page
+     while position: sticky on the header keeps working. */
+  overflow-x: clip;
 }
 body {
   background: var(--surface-page);
@@ -53,9 +56,50 @@ a {
   .menu-btn {
     display: inline-flex !important;
   }
+  /* The desktop nav (and its margin-left: auto) is hidden, so push the
+     language switch + menu button to the right edge ourselves. */
+  .header-controls {
+    margin-left: auto !important;
+  }
 }
 @media (min-width: 1101px) {
   .mobile-nav {
     display: none !important;
+  }
+}
+
+/* Compact header on phones — brand, language switch and menu button must fit
+   on one line without pushing the page wider than the viewport. */
+@media (max-width: 600px) {
+  .header-bar {
+    gap: var(--space-3) !important;
+    padding-left: var(--space-4) !important;
+    padding-right: var(--space-4) !important;
+  }
+  .brand {
+    gap: 10px !important;
+  }
+  .brand-logo {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 18px !important;
+  }
+  .brand-name {
+    font-size: var(--text-base) !important;
+  }
+  .brand-sub {
+    font-size: 9.5px !important;
+    letter-spacing: 0.12em !important;
+  }
+  .header-controls {
+    gap: var(--space-2) !important;
+  }
+  .lang-switch button {
+    min-width: 34px !important;
+    padding: 0 9px !important;
+  }
+  .menu-btn button {
+    width: 38px !important;
+    height: 38px !important;
   }
 }
