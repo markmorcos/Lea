@@ -22,19 +22,14 @@ export function HomePage({ t, lang }: { t: Dict; lang: Lang }) {
           }}
         />
         <div
-          className="hero-grid"
           style={{
             position: "relative",
             maxWidth: "var(--container)",
             margin: "0 auto",
-            padding: "var(--space-10) var(--page-pad) var(--space-9)",
-            display: "grid",
-            gridTemplateColumns: "1.1fr 0.9fr",
-            gap: "var(--space-9)",
-            alignItems: "center",
+            padding: "var(--space-11) var(--page-pad) var(--space-10)",
           }}
         >
-          <div>
+          <div style={{ maxWidth: "660px" }}>
             <Eyebrow>{t.hero.eyebrow}</Eyebrow>
             <h1 style={{ fontSize: "var(--text-4xl)", maxWidth: "16ch", marginBottom: "var(--space-5)" }}>{t.hero.title}</h1>
             <p className="lead" style={{ fontSize: "var(--text-md)", maxWidth: "46ch", color: "var(--text-body)", marginBottom: "var(--space-6)" }}>{t.hero.lead}</p>
@@ -54,27 +49,6 @@ export function HomePage({ t, lang }: { t: Dict; lang: Lang }) {
                 {Icons.globe({ size: 14 })}&nbsp;{t.hero.meta[1]}
               </Badge>
               <Badge tone="clay">{t.hero.meta[2]}</Badge>
-            </div>
-          </div>
-          <div className="hero-portrait" style={{ position: "relative" }}>
-            <Portrait src={t.media?.portraitUrl || undefined} />
-            <div
-              style={{
-                position: "absolute",
-                bottom: -18,
-                left: -18,
-                background: "var(--surface-card)",
-                borderRadius: "var(--radius-lg)",
-                padding: "12px 16px",
-                boxShadow: "var(--shadow-md)",
-                border: "1px solid var(--border-subtle)",
-                display: "flex",
-                alignItems: "center",
-                gap: 10,
-              }}
-            >
-              <span style={{ color: "var(--sage-600)" }}>{Icons.sparkle({ size: 18 })}</span>
-              <span style={{ fontFamily: "var(--font-ui)", fontSize: "var(--text-sm)", fontWeight: 600, color: "var(--text-heading)" }}>{t.hero.note}</span>
             </div>
           </div>
         </div>
