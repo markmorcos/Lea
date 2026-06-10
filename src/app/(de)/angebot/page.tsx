@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { SITE } from "@/content/content";
+import { CONTENT } from "@/content/loader";
 import { buildMetadata } from "@/lib/seo";
 import { ServicesPage } from "@/components/pages/ServicesPage";
 
 export const metadata: Metadata = buildMetadata("de", "angebot");
 
 export default function Page() {
-  return <ServicesPage t={SITE.de} lang="de" />;
+  return <ServicesPage t={CONTENT.de} lang="de" />;
 }

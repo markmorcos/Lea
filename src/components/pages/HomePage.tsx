@@ -57,7 +57,7 @@ export function HomePage({ t, lang }: { t: Dict; lang: Lang }) {
             </div>
           </div>
           <div className="hero-portrait" style={{ position: "relative" }}>
-            <Portrait />
+            <Portrait src={t.media?.portraitUrl || undefined} />
             <div
               style={{
                 position: "absolute",
@@ -92,7 +92,7 @@ export function HomePage({ t, lang }: { t: Dict; lang: Lang }) {
       <Section>
         <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "0.7fr 1.3fr", gap: "var(--space-8)", alignItems: "center" }}>
           <div className="about-portrait">
-            <Portrait ratio="1 / 1" tint="clay" />
+            <Portrait ratio="1 / 1" tint="clay" src={t.media?.portraitUrl || undefined} />
           </div>
           <div>
             <Eyebrow>{t.aboutTeaser.eyebrow}</Eyebrow>

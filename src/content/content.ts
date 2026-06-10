@@ -72,6 +72,9 @@ export type Dict = {
     side: SideItem[];
   };
   faq: { eyebrow: string; title: string; items: FaqItem[] };
+  // Optional CMS-managed media; empty/missing values fall back to the bundled
+  // assets (e.g. /lea-portrait.jpg).
+  media?: { portraitUrl?: string };
   impressum: { eyebrow: string; title: string; rows: [string, string][]; note: string };
   datenschutz: { eyebrow: string; title: string; intro: string; sections: { h: string; b: string }[] };
   footer: { tagline: string; legal: string[]; safety: string };
