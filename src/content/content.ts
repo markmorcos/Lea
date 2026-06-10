@@ -103,7 +103,7 @@ export const SITE: Record<Lang, Dict> = {
     },
     aboutTeaser: {
       eyebrow: "Über mich",
-      body: "Ich bin Lea — Psychologin (M.Sc.) und begleite Menschen in unterschiedlichen Lebenslagen.",
+      body: "Ich bin Psychologin (M.Sc.) und begleite Menschen in unterschiedlichen Lebenslagen.",
       link: "Mehr über mich",
     },
     homeTopics: {
@@ -134,8 +134,11 @@ export const SITE: Record<Lang, Dict> = {
       eyebrow: "Über mich",
       title: "Über mich",
       bio: [
-        "Ich bin Psychologin mit einem Master (M.Sc.) in Forensischer und Rechtspsychologie, den ich an der Erasmus-Universität Rotterdam abgeschlossen habe. Derzeit befinde ich mich in Ausbildung zur Psychologischen Psychotherapeutin (Verhaltenstherapie). In meiner bisherigen Arbeit habe ich Menschen in sehr unterschiedlichen und oft herausfordernden Lebenslagen begleitet — unter anderem in der Krisenintervention und in der psychologischen Online-Beratung.",
-        "Meine Haltung ist ressourcenorientiert: Ich unterstütze eine wohlwollende Selbstexploration und stärke das, was bereits in Ihnen angelegt ist. Mir ist wichtig, dass Sie sich gesehen und ernst genommen fühlen — in einem geschützten, vertraulichen Rahmen.",
+        "Ich bin Psychologin (M.Sc.) und befinde mich derzeit in der Ausbildung zur Psychologischen Psychotherapeutin mit Schwerpunkt Verhaltenstherapie.",
+        "In meiner bisherigen Arbeit, insbesondere im psychiatrischen Kontext, habe ich Menschen mit ganz unterschiedlichen Anliegen begleitet – von Ängsten und depressiven Symptomen über emotionale Belastungen und Selbstwertthemen bis hin zu Beziehungsschwierigkeiten, Stress, Suchterkrankungen und Problemen der Emotions- und Impulskontrolle. Dadurch habe ich ein breites Verständnis für die unterschiedlichen Herausforderungen entwickelt, mit denen Menschen im Laufe ihres Lebens konfrontiert sein können.",
+        "Meine Arbeit basiert auf wissenschaftlich fundierten psychologischen und psychotherapeutischen Methoden. Neben verhaltenstherapeutischen Ansätzen lasse ich auch Elemente moderner Verfahren wie der Akzeptanz- und Commitment-Therapie (ACT) und der Schematherapie einfließen. Je nach Anliegen können zudem psychodynamische Perspektiven hilfreich sein, um wiederkehrende Muster und deren Ursprung besser zu verstehen.",
+        "Mir ist wichtig, Menschen in ihrer individuellen Lebensgeschichte und Persönlichkeit wahrzunehmen – nicht nur im Hinblick auf aktuelle Belastungen. In einem geschützten und vertraulichen Rahmen unterstütze ich Sie dabei, sich selbst besser zu verstehen, Zusammenhänge zu erkennen und einen wohlwollenden Blick auf sich selbst zu entwickeln. Dabei orientiere ich mich an Ihren Stärken und Ressourcen, um gemeinsam neue Perspektiven und Handlungsmöglichkeiten zu erarbeiten.",
+        "Bitte beachten Sie, dass ich im Rahmen meiner psychologischen Beratung keine Psychotherapie im heilkundlichen Sinne anbiete. Meine Arbeit orientiert sich jedoch an wissenschaftlich fundierten psychologischen und psychotherapeutischen Konzepten.",
       ],
       qualTitle: "Qualifikationen",
       quals: [
@@ -305,7 +308,7 @@ export const SITE: Record<Lang, Dict> = {
     },
     aboutTeaser: {
       eyebrow: "About me",
-      body: "I'm Lea — a psychologist (M.Sc.) supporting people through many different situations.",
+      body: "I'm a psychologist (M.Sc.) supporting people through many different situations.",
       link: "More about me",
     },
     homeTopics: {
@@ -329,8 +332,11 @@ export const SITE: Record<Lang, Dict> = {
       eyebrow: "About me",
       title: "About me",
       bio: [
-        "I'm a psychologist with a master's degree (M.Sc.) in Forensic and Legal Psychology from Erasmus University Rotterdam. I'm currently training to become a Psychological Psychotherapist (cognitive behavioural). In my work so far I've supported people through very different and often challenging situations — including crisis intervention and online psychological counselling.",
-        "My approach is resource-oriented: I support a kind, open self-exploration and strengthen what is already within you. It matters to me that you feel seen and taken seriously — in a safe, confidential space.",
+        "I am a psychologist (M.Sc.) and am currently training to become a Psychological Psychotherapist with a focus on cognitive behavioural therapy.",
+        "In my work so far, particularly in psychiatric settings, I have supported people with a wide range of concerns – from anxiety and depressive symptoms to emotional strain and self-worth issues, through to relationship difficulties, stress, addiction, and challenges with emotion and impulse regulation. This has given me a broad understanding of the different challenges people can face over the course of their lives.",
+        "My work is grounded in scientifically based psychological and psychotherapeutic methods. Alongside cognitive behavioural approaches, I also draw on elements of modern methods such as Acceptance and Commitment Therapy (ACT) and Schema Therapy. Depending on your concern, psychodynamic perspectives can also help to better understand recurring patterns and where they come from.",
+        "It matters to me to see people in their individual life story and personality – not only in terms of their current difficulties. In a safe and confidential space, I support you in understanding yourself better, recognising connections, and developing a kinder view of yourself. In doing so, I focus on your strengths and resources, so that together we can work out new perspectives and ways forward.",
+        "Please note that within my psychological counselling I do not provide psychotherapy in the medical (Heilkunde) sense. My work is, however, guided by scientifically based psychological and psychotherapeutic concepts.",
       ],
       qualTitle: "Qualifications",
       quals: [
