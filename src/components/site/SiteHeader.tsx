@@ -66,14 +66,11 @@ export function SiteHeader({ lang }: { lang: Lang }) {
               borderRadius: "var(--radius-round)",
               background: "var(--sage-50)",
               border: "1px solid var(--sage-300)",
-              fontFamily: "var(--font-serif)",
-              fontSize: 21,
-              color: "var(--sage-700)",
-              fontWeight: 500,
               flexShrink: 0,
             }}
           >
-            lp
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/mark.svg" alt="" width={26} height={26} />
           </span>
           <span style={{ display: "flex", flexDirection: "column", lineHeight: 1.15, minWidth: 0 }}>
             <span

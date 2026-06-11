@@ -37,14 +37,12 @@ export function SiteFooter({ lang }: { lang: Lang }) {
                   width: 40,
                   height: 40,
                   borderRadius: "var(--radius-round)",
-                  background: "color-mix(in srgb, var(--sage-50) 12%, transparent)",
-                  border: "1px solid var(--sage-600)",
-                  fontFamily: "var(--font-serif)",
-                  fontSize: 18,
-                  color: "var(--sage-200)",
+                  background: "var(--sage-50)",
+                  border: "1px solid var(--sage-300)",
                 }}
               >
-                lp
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/mark.svg" alt="" width={24} height={24} />
               </span>
               <span style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-lg)", color: "var(--sand-50)" }}>Lea Zoe Pfaffeneder</span>
             </div>

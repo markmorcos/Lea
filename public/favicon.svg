@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 96 96" role="img" aria-label="Lea Zoe Pfaffeneder">
+  <rect width="96" height="96" rx="22" fill="#EDF3EF"></rect>
+  <path d="M26 78 V48 a22 22 0 0 1 44 0 V78" fill="none" stroke="#3C5A4C" stroke-width="6" stroke-linecap="round"></path>
+  <circle cx="48" cy="58" r="7.5" fill="#BB6E47"></circle>
+</svg>

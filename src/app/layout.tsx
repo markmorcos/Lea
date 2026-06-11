@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s — Lea Zoe Pfaffeneder",
   },
   description: "Psychologische Beratung & Coaching, online und deutschlandweit — ressourcenorientiert, wertschätzend, auf Augenhöhe.",
-  icons: { icon: "/monogram.svg" },
+  icons: { icon: "/favicon.svg" },
 };
 
 // Site-wide structured data — helps search engines understand the practice.
