@@ -315,32 +315,33 @@ def flyer3():
 FLYER4 = {
     "de": {
         "subtitle": "Psychologin (M.Sc.) · Psychologische Beratung",
-        "eyebrow": "Warten auf einen Therapieplatz?",
-        "headline": ["Sie müssen", "damit nicht", "allein bleiben."],
-        "credential": "Ein vertraulicher Raum, in dem jemand zuhört.",
-        "lead": "Wenn Sie keinen Therapieplatz finden oder einfach jemanden zum "
-                "Reden brauchen: Ich höre zu und begleite Sie in vertraulichen "
-                "Online-Gesprächen – ruhig und auf Augenhöhe. Als Unterstützung "
-                "für sich oder in der Wartezeit auf eine Psychotherapie.",
+        "eyebrow": "Meine Haltung",
+        "quote": "„Es kommt nicht darauf an, was man aus uns gemacht hat, "
+                 "sondern darauf, was wir aus dem machen, was man aus uns "
+                 "gemacht hat.“",
+        "quote_author": "Jean-Paul Sartre",
+        "lead": "Mir ist wichtig, Dich als ganzen Menschen zu sehen – mit Deiner "
+                "Geschichte, Deinen Mustern und vor allem Deinen Ressourcen. Ich "
+                "freue mich, Dich ein Stück auf Deinem Weg zu begleiten.",
         "price_unit": "/ 50 Minuten",
-        "price_note": "Erstgespräch unverbindlich · kurzfristige Termine möglich",
-        "qr_title": "Termin finden",
+        "price_note": "Erstgespräch unverbindlich · Online & deutschlandweit",
+        "qr_title": "Lass uns sprechen",
         "qr_sub": "Online buchen oder Code scannen:",
         "footer": "pfaffeneder-psychologische-beratung.de  ·  0155 6713 8410",
         "name": "04-termin-cta-de",
     },
     "en": {
         "subtitle": "Psychologist (M.Sc.) · Psychological counselling",
-        "eyebrow": "Waiting for a therapy place?",
-        "headline": ["You don't", "have to face", "it alone."],
-        "credential": "A confidential space where someone listens.",
-        "lead": "If you can't find a therapy place, or simply need someone to "
-                "talk to: I listen and support you in confidential online "
-                "sessions – calmly and at eye level. As support in itself, or "
-                "while you wait for psychotherapy.",
+        "eyebrow": "My approach",
+        "quote": "“What matters is not what has been made of us, but what we "
+                 "make of what has been made of us.”",
+        "quote_author": "Jean-Paul Sartre",
+        "lead": "It matters to me to see you as a whole person – with your story, "
+                "your patterns and, above all, your resources. I'd be glad to "
+                "walk part of your path with you.",
         "price_unit": "/ 50 minutes",
-        "price_note": "No-obligation first session · short-notice slots possible",
-        "qr_title": "Find a time",
+        "price_note": "No-obligation first session · online, across Germany",
+        "qr_title": "Let's talk",
         "qr_sub": "Book online or scan the code:",
         "footer": "pfaffeneder-psychologische-beratung.de  ·  +49 155 6713 8410",
         "name": "04-termin-cta-en",
@@ -360,24 +361,23 @@ def flyer4(lang):
     b.append(t(MARGIN + 32, 56, "Lea Zoe Pfaffeneder", SERIF_MED, 15, SAND_50))
     b.append(eyebrow(MARGIN + 33, 69, c["subtitle"], fill="#C9D6CE"))
 
-    y = 144
+    y = 150
     b.append(eyebrow(MARGIN, y, c["eyebrow"], fill=CLAY_100))
-    y += 32
-    for ln in c["headline"]:
-        b.append(t(MARGIN, y, ln, SERIF_SB, 34, SAND_50))
-        y += 38
-    # credential line (clay accent rule + text)
+    y += 38
+    # featured quote
+    for ln in wrap(c["quote"], SERIF_MED, 21, W - 2 * MARGIN):
+        b.append(t(MARGIN, y, ln, SERIF_MED, 21, SAND_50))
+        y += 29
     y += 8
-    b.append(f'<rect x="{MARGIN}" y="{y-9}" width="22" height="2.5" rx="1.25" fill="{CLAY_500}"/>')
-    cp, y = paragraph(MARGIN + 32, y, c["credential"], SANS_SB, 10.5, CLAY_100,
-                      W - 2 * MARGIN - 32, 14)
-    b.append(cp)
-    y += 12
+    b.append(f'<rect x="{MARGIN}" y="{y-4}" width="18" height="2" rx="1" fill="{CLAY_500}"/>')
+    b.append(t(MARGIN + 28, y, c["quote_author"], SANS_SB, 10.5, CLAY_100))
+    y += 28
+    # warm, personal note (her voice)
     p, y = paragraph(MARGIN, y, c["lead"], SANS, 11, "#C9D6CE", W - 2 * MARGIN, 15.5)
     b.append(p)
 
     # price row
-    y += 26
+    y += 24
     b.append(t(MARGIN, y, "45 €", SERIF_SB, 28, SAND_50))
     pw = _metrics[SERIF_SB].width("45 €", 28)
     b.append(t(MARGIN + pw + 10, y, c["price_unit"], SANS, 12, "#9DBBA8"))
