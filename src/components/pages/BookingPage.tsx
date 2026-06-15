@@ -4,6 +4,7 @@ import React from "react";
 import { Card, Field, Input, Textarea, Checkbox, Button } from "@/components/ds";
 import { Icons } from "@/components/icons";
 import { Section, PageHeader, FormSuccess } from "@/components/site/Shared";
+import { CalEmbed } from "@/components/site/CalEmbed";
 import { type Dict } from "@/content/content";
 
 export function BookingPage({ t }: { t: Dict }) {
@@ -15,28 +16,13 @@ export function BookingPage({ t }: { t: Dict }) {
       <PageHeader eyebrow={b.eyebrow} title={b.title} lead={b.intro} />
       <Section>
         <div className="booking-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-6)", alignItems: "start" }}>
-          {/* Scheduler placeholder */}
+          {/* Online scheduler (Cal.com embed) */}
           <Card padding="lg" style={{ minHeight: 380, display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: "var(--space-4)" }}>
               <span style={{ color: "var(--sage-600)" }}>{Icons.calendar({ size: 22 })}</span>
               <h2 style={{ fontSize: "var(--text-lg)", margin: 0 }}>{b.schedulerLabel}</h2>
             </div>
-            <div
-              style={{
-                flex: 1,
-                border: "1.5px dashed var(--border-strong)",
-                borderRadius: "var(--radius-md)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                textAlign: "center",
-                padding: "var(--space-6)",
-                color: "var(--text-faint)",
-                background: "var(--surface-sunken)",
-              }}
-            >
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "var(--text-sm)" }}>{b.schedulerNote}</span>
-            </div>
+            <CalEmbed style={{ flex: 1, minHeight: 320 }} />
           </Card>
           {/* Request form */}
           <Card padding="lg" elevation="raised">
