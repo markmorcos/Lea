@@ -314,34 +314,33 @@ def flyer3():
 # ===========================================================================
 FLYER4 = {
     "de": {
-        "subtitle": "M.Sc. Psychologin · Psychologische Beratung",
-        "eyebrow": "Psychologische Beratung & Begleitung",
-        "headline": ["Klarheit, Halt", "und neue", "Perspektiven."],
-        "credential": "Psychologin (M.Sc.), in Ausbildung zur Psychologischen "
-                      "Psychotherapeutin (Verhaltenstherapie).",
-        "lead": "Psychologische Beratung auf Basis wissenschaftlich fundierter "
-                "Methoden und klinischer Erfahrung — vertraulich, strukturiert "
-                "und an Ihren Zielen orientiert. Online und deutschlandweit, in "
-                "Deutsch oder English.",
+        "subtitle": "Psychologin (M.Sc.) · Psychologische Beratung",
+        "eyebrow": "Warten auf einen Therapieplatz?",
+        "headline": ["Sie müssen", "damit nicht", "allein bleiben."],
+        "credential": "Ein vertraulicher Raum, in dem jemand zuhört.",
+        "lead": "Wenn Sie keinen Therapieplatz finden oder einfach jemanden zum "
+                "Reden brauchen: Ich höre zu und begleite Sie in vertraulichen "
+                "Online-Gesprächen – ruhig und auf Augenhöhe. Als Unterstützung "
+                "für sich oder in der Wartezeit auf eine Psychotherapie.",
         "price_unit": "/ 50 Minuten",
-        "price_note": "Erstgespräch unverbindlich · Selbstzahlerleistung",
-        "qr_title": "Termin vereinbaren",
+        "price_note": "Erstgespräch unverbindlich · kurzfristige Termine möglich",
+        "qr_title": "Termin finden",
         "qr_sub": "Online buchen oder Code scannen:",
         "footer": "pfaffeneder-psychologische-beratung.de  ·  0155 6713 8410",
         "name": "04-termin-cta-de",
     },
     "en": {
-        "subtitle": "M.Sc. Psychologist · Psychological Counselling",
-        "eyebrow": "Psychological counselling & support",
-        "headline": ["Clarity, footing", "and fresh", "perspective."],
-        "credential": "Psychologist (M.Sc.), training as a Psychological "
-                      "Psychotherapist (cognitive behavioural therapy).",
-        "lead": "Psychological counselling grounded in scientifically based "
-                "methods and clinical experience — confidential, structured and "
-                "focused on your goals. Online, across Germany, in English or German.",
+        "subtitle": "Psychologist (M.Sc.) · Psychological counselling",
+        "eyebrow": "Waiting for a therapy place?",
+        "headline": ["You don't", "have to face", "it alone."],
+        "credential": "A confidential space where someone listens.",
+        "lead": "If you can't find a therapy place, or simply need someone to "
+                "talk to: I listen and support you in confidential online "
+                "sessions – calmly and at eye level. As support in itself, or "
+                "while you wait for psychotherapy.",
         "price_unit": "/ 50 minutes",
-        "price_note": "Intro session, no obligation · self-pay service",
-        "qr_title": "Book a session",
+        "price_note": "No-obligation first session · short-notice slots possible",
+        "qr_title": "Find a time",
         "qr_sub": "Book online or scan the code:",
         "footer": "pfaffeneder-psychologische-beratung.de  ·  +49 155 6713 8410",
         "name": "04-termin-cta-en",
