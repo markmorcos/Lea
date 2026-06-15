@@ -312,7 +312,38 @@ def flyer3():
 # ===========================================================================
 # FLYER 4 — Call to action / book the intro call (poster-ish, QR-forward)
 # ===========================================================================
-def flyer4():
+FLYER4 = {
+    "de": {
+        "subtitle": "Psychologische Beratung",
+        "eyebrow": "Bereit für den ersten Schritt?",
+        "headline": ["Ein Gespräch", "kann vieles", "bewegen."],
+        "lead": "Buchen Sie ein unverbindliches Kennenlern-Gespräch — "
+                "online und deutschlandweit, in Deutsch oder English.",
+        "price_unit": "/ 50 Minuten",
+        "price_note": "Kennenlern-Gespräch unverbindlich · Selbstzahlerleistung",
+        "qr_title": "Jetzt Termin anfragen",
+        "qr_sub": "Code scannen oder besuchen:",
+        "footer": "pfaffeneder-psychologische-beratung.de  ·  0155 6713 8410",
+        "name": "04-termin-cta-de",
+    },
+    "en": {
+        "subtitle": "Psychological Counselling",
+        "eyebrow": "Ready for the first step?",
+        "headline": ["One conversation", "can change", "a great deal."],
+        "lead": "Book a no-obligation intro call — online, across Germany, "
+                "in English or German.",
+        "price_unit": "/ 50 minutes",
+        "price_note": "Intro call with no obligation · self-pay service",
+        "qr_title": "Book your appointment",
+        "qr_sub": "Scan the code or visit:",
+        "footer": "pfaffeneder-psychologische-beratung.de  ·  +49 155 6713 8410",
+        "name": "04-termin-cta-en",
+    },
+}
+
+
+def flyer4(lang):
+    c = FLYER4[lang]
     b = [f'<rect width="{W}" height="{H}" fill="{SAGE_900}"/>']
     # large faint arch
     b.append(f'<g opacity="0.10"><g transform="translate(120,150) scale(3.8)">'
@@ -321,36 +352,39 @@ def flyer4():
              f'<circle cx="48" cy="58" r="7.5" fill="{CLAY_500}"/></g></g>')
     b.append(logo_mark(MARGIN - 6, 38, 0.40, stroke=SAND_50, dot=CLAY_500))
     b.append(t(MARGIN + 32, 56, "Lea Zoe Pfaffeneder", SERIF_MED, 15, SAND_50))
-    b.append(eyebrow(MARGIN + 33, 69, "Psychologische Beratung", fill="#C9D6CE"))
+    b.append(eyebrow(MARGIN + 33, 69, c["subtitle"], fill="#C9D6CE"))
 
-    y = 168
-    b.append(eyebrow(MARGIN, y, "Bereit für den ersten Schritt?", fill=CLAY_100))
+    y = 150
+    b.append(eyebrow(MARGIN, y, c["eyebrow"], fill=CLAY_100))
     y += 34
-    for ln in ["Ein Gespräch", "kann vieles", "bewegen."]:
-        b.append(t(MARGIN, y, ln, SERIF_SB, 40, SAND_50))
-        y += 44
-    y += 8
-    p, y = paragraph(MARGIN, y,
-        "Buchen Sie ein unverbindliches Kennenlern-Gespräch — "
-        "online und deutschlandweit, in Deutsch oder English.",
-        SANS, 12.5, "#D7E2DB", W - 2 * MARGIN, 18)
+    for ln in c["headline"]:
+        b.append(t(MARGIN, y, ln, SERIF_SB, 38, SAND_50))
+        y += 42
+    y += 6
+    p, y = paragraph(MARGIN, y, c["lead"], SANS, 12.5, "#D7E2DB", W - 2 * MARGIN, 18)
     b.append(p)
 
+    # price row
+    y += 30
+    b.append(t(MARGIN, y, "45 €", SERIF_SB, 30, SAND_50))
+    pw = _metrics[SERIF_SB].width("45 €", 30)
+    b.append(t(MARGIN + pw + 10, y, c["price_unit"], SANS, 12, "#9DBBA8"))
+    b.append(t(MARGIN, y + 18, c["price_note"], SANS, 10, "#9DBBA8"))
+
     # QR panel
-    cy = 430
+    cy = 436
     b.append(f'<rect x="{MARGIN}" y="{cy}" width="{W-2*MARGIN}" height="96" rx="16" '
              f'fill="{SAND_50}"/>')
     b.append(f'<rect x="{MARGIN+18}" y="{cy+16}" width="64" height="64" rx="8" fill="#FFFFFF"/>')
     b.append(qr_svg("https://cal.com/pfaffeneder/psychologische-beratung",
                     MARGIN + 24, cy + 22, 52, dark=SAGE_900))
     tx = MARGIN + 100
-    b.append(t(tx, cy + 36, "Jetzt Termin anfragen", SERIF_SB, 15, SLATE_900))
-    b.append(t(tx, cy + 54, "Code scannen oder besuchen:", SANS, 10, SLATE_500))
+    b.append(t(tx, cy + 36, c["qr_title"], SERIF_SB, 15, SLATE_900))
+    b.append(t(tx, cy + 54, c["qr_sub"], SANS, 10, SLATE_500))
     b.append(t(tx, cy + 70, "cal.com/pfaffeneder", SANS_SB, 11.5, CLAY_600))
 
-    b.append(footer_bar("pfaffeneder-psychologische-beratung.de  ·  0155 6713 8410",
-                        fill_bg=SAGE_800))
-    save("04-termin-cta", "\n".join(b))
+    b.append(footer_bar(c["footer"], fill_bg=SAGE_800))
+    save(c["name"], "\n".join(b))
 
 
 # ===========================================================================
@@ -412,9 +446,6 @@ def flyer5():
 
 
 if __name__ == "__main__":
-    flyer1()
-    flyer2()
-    flyer3()
-    flyer4()
-    flyer5()
+    flyer4("de")
+    flyer4("en")
     print("\nAll flyers written to", OUT)
