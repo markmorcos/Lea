@@ -5,7 +5,7 @@
 import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
-const CMS_URL = process.env.CMS_URL || "https://cms.morcos.tech";
+const CMS_URL = process.env.CMS_URL || "https://admin.morcos.tech";
 const SITE_KEY = "lea";
 const LOCALES = ["de", "en"];
 
@@ -41,7 +41,7 @@ function validate(locale, dict) {
 try {
   const content = {};
   for (const locale of LOCALES) {
-    const url = `${CMS_URL}/api/v1/sites/${SITE_KEY}/content?locale=${locale}`;
+    const url = `${CMS_URL}/api/cms/v1/sites/${SITE_KEY}/content?locale=${locale}`;
     const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
     if (!res.ok) fail(`${url} → HTTP ${res.status}`);
     const body = await res.json();
