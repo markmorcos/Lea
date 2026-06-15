@@ -314,28 +314,35 @@ def flyer3():
 # ===========================================================================
 FLYER4 = {
     "de": {
-        "subtitle": "Psychologische Beratung",
-        "eyebrow": "Bereit für den ersten Schritt?",
-        "headline": ["Ein Gespräch", "kann vieles", "bewegen."],
-        "lead": "Buchen Sie ein unverbindliches Kennenlern-Gespräch — "
-                "online und deutschlandweit, in Deutsch oder English.",
+        "subtitle": "M.Sc. Psychologin · Psychologische Beratung",
+        "eyebrow": "Psychologische Beratung & Begleitung",
+        "headline": ["Klarheit, Halt", "und neue", "Perspektiven."],
+        "credential": "Psychologin (M.Sc.), in Ausbildung zur Psychologischen "
+                      "Psychotherapeutin (Verhaltenstherapie).",
+        "lead": "Psychologische Beratung auf Basis wissenschaftlich fundierter "
+                "Methoden und klinischer Erfahrung — vertraulich, strukturiert "
+                "und an Ihren Zielen orientiert. Online und deutschlandweit, in "
+                "Deutsch oder English.",
         "price_unit": "/ 50 Minuten",
-        "price_note": "Kennenlern-Gespräch unverbindlich · Selbstzahlerleistung",
-        "qr_title": "Jetzt Termin anfragen",
-        "qr_sub": "Code scannen oder besuchen:",
+        "price_note": "Erstgespräch unverbindlich · Selbstzahlerleistung",
+        "qr_title": "Termin vereinbaren",
+        "qr_sub": "Online buchen oder Code scannen:",
         "footer": "pfaffeneder-psychologische-beratung.de  ·  0155 6713 8410",
         "name": "04-termin-cta-de",
     },
     "en": {
-        "subtitle": "Psychological Counselling",
-        "eyebrow": "Ready for the first step?",
-        "headline": ["One conversation", "can change", "a great deal."],
-        "lead": "Book a no-obligation intro call — online, across Germany, "
-                "in English or German.",
+        "subtitle": "M.Sc. Psychologist · Psychological Counselling",
+        "eyebrow": "Psychological counselling & support",
+        "headline": ["Clarity, footing", "and fresh", "perspective."],
+        "credential": "Psychologist (M.Sc.), training as a Psychological "
+                      "Psychotherapist (cognitive behavioural therapy).",
+        "lead": "Psychological counselling grounded in scientifically based "
+                "methods and clinical experience — confidential, structured and "
+                "focused on your goals. Online, across Germany, in English or German.",
         "price_unit": "/ 50 minutes",
-        "price_note": "Intro call with no obligation · self-pay service",
-        "qr_title": "Book your appointment",
-        "qr_sub": "Scan the code or visit:",
+        "price_note": "Intro session, no obligation · self-pay service",
+        "qr_title": "Book a session",
+        "qr_sub": "Book online or scan the code:",
         "footer": "pfaffeneder-psychologische-beratung.de  ·  +49 155 6713 8410",
         "name": "04-termin-cta-en",
     },
@@ -354,34 +361,40 @@ def flyer4(lang):
     b.append(t(MARGIN + 32, 56, "Lea Zoe Pfaffeneder", SERIF_MED, 15, SAND_50))
     b.append(eyebrow(MARGIN + 33, 69, c["subtitle"], fill="#C9D6CE"))
 
-    y = 150
+    y = 144
     b.append(eyebrow(MARGIN, y, c["eyebrow"], fill=CLAY_100))
-    y += 34
+    y += 32
     for ln in c["headline"]:
-        b.append(t(MARGIN, y, ln, SERIF_SB, 38, SAND_50))
-        y += 42
-    y += 6
-    p, y = paragraph(MARGIN, y, c["lead"], SANS, 12.5, "#D7E2DB", W - 2 * MARGIN, 18)
+        b.append(t(MARGIN, y, ln, SERIF_SB, 34, SAND_50))
+        y += 38
+    # credential line (clay accent rule + text)
+    y += 8
+    b.append(f'<rect x="{MARGIN}" y="{y-9}" width="22" height="2.5" rx="1.25" fill="{CLAY_500}"/>')
+    cp, y = paragraph(MARGIN + 32, y, c["credential"], SANS_SB, 10.5, CLAY_100,
+                      W - 2 * MARGIN - 32, 14)
+    b.append(cp)
+    y += 12
+    p, y = paragraph(MARGIN, y, c["lead"], SANS, 11, "#C9D6CE", W - 2 * MARGIN, 15.5)
     b.append(p)
 
     # price row
-    y += 30
-    b.append(t(MARGIN, y, "45 €", SERIF_SB, 30, SAND_50))
-    pw = _metrics[SERIF_SB].width("45 €", 30)
+    y += 26
+    b.append(t(MARGIN, y, "45 €", SERIF_SB, 28, SAND_50))
+    pw = _metrics[SERIF_SB].width("45 €", 28)
     b.append(t(MARGIN + pw + 10, y, c["price_unit"], SANS, 12, "#9DBBA8"))
-    b.append(t(MARGIN, y + 18, c["price_note"], SANS, 10, "#9DBBA8"))
+    b.append(t(MARGIN, y + 17, c["price_note"], SANS, 10, "#9DBBA8"))
 
     # QR panel
-    cy = 436
-    b.append(f'<rect x="{MARGIN}" y="{cy}" width="{W-2*MARGIN}" height="96" rx="16" '
+    cy = 432
+    b.append(f'<rect x="{MARGIN}" y="{cy}" width="{W-2*MARGIN}" height="92" rx="16" '
              f'fill="{SAND_50}"/>')
-    b.append(f'<rect x="{MARGIN+18}" y="{cy+16}" width="64" height="64" rx="8" fill="#FFFFFF"/>')
+    b.append(f'<rect x="{MARGIN+18}" y="{cy+15}" width="62" height="62" rx="8" fill="#FFFFFF"/>')
     b.append(qr_svg("https://cal.com/pfaffeneder/psychologische-beratung",
-                    MARGIN + 24, cy + 22, 52, dark=SAGE_900))
-    tx = MARGIN + 100
-    b.append(t(tx, cy + 36, c["qr_title"], SERIF_SB, 15, SLATE_900))
-    b.append(t(tx, cy + 54, c["qr_sub"], SANS, 10, SLATE_500))
-    b.append(t(tx, cy + 70, "cal.com/pfaffeneder", SANS_SB, 11.5, CLAY_600))
+                    MARGIN + 23, cy + 20, 52, dark=SAGE_900))
+    tx = MARGIN + 98
+    b.append(t(tx, cy + 35, c["qr_title"], SERIF_SB, 15, SLATE_900))
+    b.append(t(tx, cy + 53, c["qr_sub"], SANS, 10, SLATE_500))
+    b.append(t(tx, cy + 69, "cal.com/pfaffeneder", SANS_SB, 11.5, CLAY_600))
 
     b.append(footer_bar(c["footer"], fill_bg=SAGE_800))
     save(c["name"], "\n".join(b))
